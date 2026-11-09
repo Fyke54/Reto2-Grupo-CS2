@@ -1,0 +1,85 @@
+/* CONFIGURACIÓN GENERAL */
+body {
+    background-color: #10111b;
+    color: white;
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+}
+
+/* CABECERA */
+.cabecera {
+    background-color: #1b1d2c;
+    border: 1px solid #35394f;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nombreApp {
+    background-color: #242739;
+    padding: 15px 25px;
+    color: #ffd900;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* FORMULARIO */
+form {
+    background-color: #1b1d2c;
+    border: 1px solid #35394f;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 30px 0;
+}
+
+
+h2 {
+    color: #ffd900;
+    border-bottom: 1px solid #35394f;
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+input {
+    background-color: #242739;
+    color: white;
+    border: 1px solid #35394f;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* SUBIDA DEL CV */
+.subir-cv {
+    border: 2px dashed #ffd900;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #242739;
+}
+
+.subir-cv label {
+    cursor: pointer;
+    display: block;
+}
+
+/* BOTÓN */
+button {
+    background-color: #ffd900;
+    color: #10111b;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e6c400;
+}

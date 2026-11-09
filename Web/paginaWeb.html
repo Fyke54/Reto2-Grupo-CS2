@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentConnect</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1 class="nombreApp">TALENTCONNECT</h1>
+    </header>
+
+    <form id="formulario">
+        <h2>Datos personales</h2>
+
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+
+        <p>
+            <label for="apellido1">Primer apellido:</label>
+            <input type="text" id="apellido1" name="apellido1" required>
+        </p>
+
+        <p>
+            <label for="apellido2">Segundo apellido:</label>
+            <input type="text" id="apellido2" name="apellido2">
+        </p>
+
+        <p>
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        </p>
+
+        <h2>Currículum</h2>
+
+        <div class="subir-cv">
+            <label for="cv">
+                <h3>Sube tu currículum</h3>
+                <p>Arrastra tu archivo aquí o haz clic para seleccionarlo</p>
+                <small>Formato permitido: JSON</small>
+            </label>
+
+            <input
+                type="file"
+                id="cv"
+                name="cv"
+                accept=".json,application/json"
+                required
+            >
+        </div>
+
+        <p>
+            <button type="submit">Enviar candidatura</button>
+        </p>
+
+        <p id="resultado" role="status" aria-live="polite"></p>
+    </form>
+
+<script>
+    const formulario = document.getElementById("formulario");
+    const resultado = document.getElementById("resultado");
+
+    formulario.addEventListener("submit", async function (evento) {
+        evento.preventDefault();
+
+        const archivo = document.getElementById("cv").files[0];
+
+        if (!archivo) {
+            resultado.textContent = "Selecciona el archivo JSON de tu CV.";
+            return;
+        }
+
+        try {
+            const cv = JSON.parse(await archivo.text());
+
+            if (!cv || Array.isArray(cv) || typeof cv !== "object") {
+                throw new Error("El JSON del CV debe contener un objeto.");
+            }
+
+            const datos = {
+                nombre: document.getElementById("nombre").value.trim(),
+                apellido1: document.getElementById("apellido1").value.trim(),
+                apellido2: document.getElementById("apellido2").value.trim(),
+                correo: document.getElementById("correo").value.trim(),
+                cv: cv
+            };
+
+            const contenido = new Blob(
+                [JSON.stringify(datos, null, 4)],
+                { type: "application/json" }
+            );
+
+            const enlace = document.createElement("a");
+            const url = URL.createObjectURL(contenido);
+
+            enlace.href = url;
+            enlace.download = "candidato.json";
+            document.body.appendChild(enlace);
+            enlace.click();
+            enlace.remove();
+
+            setTimeout(function () {
+                URL.revokeObjectURL(url);
+            }, 1000);
+
+            resultado.textContent =
+                "Candidatura descargada. Coloca candidato.json en la carpeta " +
+                "python/candidatos y ejecuta importar.py.";
+
+        } catch (error) {
+            resultado.textContent = error instanceof SyntaxError
+                ? "El archivo seleccionado no contiene un JSON válido."
+                : error.message;
+        }
+    });
+</script>
+
+</body>
+</html>
