@@ -19,6 +19,7 @@ Este proyecto se desarrolla para resolver la gestión masiva de currículums de 
 
 ## Interfaz y Arquitectura
 ![Vista principal del formulario de TalentConnect](Formulario.PNG)
+
 *Figura 1: Interfaz de usuario del formulario de registro.*
 
 ![Esquema de la base de datos](Base_Datos.PNG)
