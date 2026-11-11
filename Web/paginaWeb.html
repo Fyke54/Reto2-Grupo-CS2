@@ -88,3 +88,16 @@
                             </div>
                         </div>
                     </fieldset>
+
+                    <!-- Archivo JSON -->
+                    <fieldset>
+                        <legend>Sube tu CV</legend>
+                        <div class="bloque-campo">
+                            <label for="archivo-pdf">Elige tu currículum (solo JSON):</label>
+                            <input type="file" id="archivo-pdf" name="archivo-pdf" accept=".JSON" required>
+                            <span id="error-pdf" class="texto-error">Tiene que ser un JSON.</span>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" id="boton-enviar">Enviar Datos</button>
+                </form>
