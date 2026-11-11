@@ -97,3 +97,62 @@ for archivo_path in ENTRADA_path.glob("*.json"):
             experiencia_num = experiencia_en_anios(experiencia_dato)
         else:
             experiencia_num = float(cv_dict.get("experiencia", 0))
+            
+            # Crea el registro del candidato con los datos extraidos.
+        candidato_dict = {
+            "nombre": nombre_str,
+            "codigo": codigo_int,
+            "correo": correo_str,
+            "idiomas": idiomas_list,
+            "habilidades": cv_dict.get("habilidades", []),
+            "experiencia": experiencia_num
+        }
+
+        # Calcula la nota segun habilidades, idiomas y experiencia.
+        habilidades_list = [
+            habilidad_str.casefold()
+            for habilidad_str in candidato_dict["habilidades"]
+        ]
+        idiomas_normalizados_list = [
+            idioma_str.casefold()
+            for idioma_str in idiomas_list
+        ]
+
+        puntos_int = sum(
+            habilidad_necesaria_str in habilidades_list
+            for habilidad_necesaria_str in HABILIDADES_NECESARIAS_list
+        )
+        puntos_int += sum(
+            idioma_necesario_str in idiomas_normalizados_list
+            for idioma_necesario_str in IDIOMAS_NECESARIOS_list
+        )
+        puntos_int += experiencia_num >= 3
+
+        candidato_dict["nota"] = round(puntos_int / 8 * 10, 2)
+        candidatos_list.append(candidato_dict)
+        archivos_procesados_list.append(archivo_path)
+        codigo_int += 1
+
+        print(f"Procesado: {nombre_str}, nota {candidato_dict['nota']}/10")
+
+    except (OSError, ValueError, TypeError, KeyError) as error_exc:
+        print(f"Error en {archivo_path.name}: {error_exc}")
+
+
+# Guarda la lista actualizada de candidatos en formato JSON.
+LISTA_path.write_text(
+    json.dumps(candidatos_list, ensure_ascii=False, indent=4),
+    encoding="utf-8"
+)
+
+
+# Mueve los archivos procesados a su carpeta correspondiente.
+for archivo_path in archivos_procesados_list:
+    shutil.move(
+        str(archivo_path),
+        str(PROCESADOS_path / archivo_path.name)
+    )
+
+
+# Muestra la ubicacion de la lista actualizada.
+print(f"Lista actualizada: {LISTA_path}")
