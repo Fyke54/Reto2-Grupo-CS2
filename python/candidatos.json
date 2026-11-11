@@ -1,0 +1,38 @@
+[
+    {
+        "nombre": "Erik Alzas Hernandez",
+        "codigo": 1,
+        "correo": "erik@gmail.com",
+        "idiomas": [
+            "Español",
+            "Inglés",
+            "Euskera"
+        ],
+        "habilidades": [
+            "Python",
+            "JavaScript",
+            "SQL",
+            "HTML",
+            "CSS",
+            "Git"
+        ],
+        "experiencia": 6,
+        "nota": 10.0
+    },
+    {
+        "nombre": "Juan Perez",
+        "codigo": 2,
+        "correo": "juan@gmail.com",
+        "idiomas": [
+            "Español",
+            "Inglés"
+        ],
+        "habilidades": [
+            "Python",
+            "Java",
+            "SQL"
+        ],
+        "experiencia": 4,
+        "nota": 8
+    }
+]
