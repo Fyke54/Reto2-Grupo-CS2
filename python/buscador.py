@@ -86,7 +86,7 @@ while True:
             print("Idiomas:", candidato["idiomas"])
             print("Habilidades:", candidato["habilidades"])
             print("Experiencia:", candidato["experiencia"])
-            print("Correo:", candidato["correo_electronico"])
+            print("Correo:", candidato["correo"])
             print("Nota del CV:", candidato["nota"])
             break
 
