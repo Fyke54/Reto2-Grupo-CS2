@@ -149,3 +149,8 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     border: 1px solid #c3e6cb;
 }
+
+/* Clase para ocultar elementos mediante JavaScript */
+.oculto {
+    display: none !important;
+}
