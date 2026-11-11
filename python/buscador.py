@@ -65,7 +65,7 @@ while True:
                 cumple = False
 
             if not cumple:
-                break
+                cumple = False
 
             if cumple:
                 encontrados += 1
@@ -75,7 +75,6 @@ while True:
                 print("Habilidades:", candidato["habilidades"])
                 print("Experiencia:", candidato["experiencia"])
                 print("Nota del CV:", candidato["nota"])
-                break
 
         if encontrados == 0:
             print("No hay candidatos con esos filtros")
