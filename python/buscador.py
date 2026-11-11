@@ -91,7 +91,7 @@ while True:
             break
 
     elif opcion == "3":
-        continue
+        break
 
     else:
         print("Opción incorrecta")
