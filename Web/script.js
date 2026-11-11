@@ -46,3 +46,51 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 errorEmail.style.display = 'none';
             }
+
+            // Validar Archivo PDF
+            var archivoPdf = document.getElementById('archivo-pdf');
+            var errorPdf = document.getElementById('error-pdf');
+            if (archivoPdf.files.length === 0 || archivoPdf.files[0].type !== 'application/pdf') {
+                errorPdf.style.display = 'block';
+                todoCorrecto = false;
+            } else {
+                errorPdf.style.display = 'none';
+            }
+
+            // Si todo está correcto
+            if (todoCorrecto === true) {
+                var lenguajesMarcados = document.querySelectorAll('input[name="lenguajes"]:checked');
+                var bbddMarcadas = document.querySelectorAll('input[name="bbdd"]:checked');
+                
+                var listaLenguajes = [];
+                lenguajesMarcados.forEach(function(checkbox) {
+                    listaLenguajes.push(checkbox.value);
+                });
+                
+                var listaBbdd = [];
+                bbddMarcadas.forEach(function(checkbox) {
+                    listaBbdd.push(checkbox.value);
+                });
+
+                var datosFormulario = {
+                    nombre: nombre.value,
+                    email: email.value,
+                    experiencia: rangoExperiencia.value,
+                    lenguajes: listaLenguajes,
+                    basesDeDatos: listaBbdd,
+                    nombreDelPdf: archivoPdf.files[0].name
+                };
+                
+                console.log("Datos en JSON:", datosFormulario);
+
+                cajaExito.classList.remove('oculto');
+                formulario.reset();
+                textoExperiencia.textContent = '0';
+                
+                setTimeout(function() {
+                    cajaExito.classList.add('oculto');
+                }, 4000);
+            }
+        });
+    }
+});
