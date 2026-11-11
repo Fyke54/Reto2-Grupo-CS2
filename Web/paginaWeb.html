@@ -66,3 +66,38 @@
                             </div>
                         </div>
                     </fieldset>
+                    
+                    <!-- Habilidades -->
+                    <fieldset>
+                        <legend>Habilidades</legend>
+                        
+                        <div class="bloque-campo">
+                            <label>¿Qué sabes programar?</label>
+                            <div id="grupo-opciones">
+                                <label><input type="checkbox" name="lenguajes" value="python"> Python</label>
+                                <label><input type="checkbox" name="lenguajes" value="java"> Java</label>
+                                <label><input type="checkbox" name="lenguajes" value="html"> HTML/CSS</label>
+                            </div>
+                        </div>
+
+                        <div class="bloque-campo">
+                            <label>Bases de Datos:</label>
+                            <div id="grupo-opciones">
+                                <label><input type="checkbox" name="bbdd" value="mysql"> MySQL</label>
+                                <label><input type="checkbox" name="bbdd" value="oracle"> Oracle</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Archivo JSON -->
+                    <fieldset>
+                        <legend>Sube tu CV</legend>
+                        <div class="bloque-campo">
+                            <label for="archivo-pdf">Elige tu currículum (solo JSON):</label>
+                            <input type="file" id="archivo-pdf" name="archivo-pdf" accept=".JSON" required>
+                            <span id="error-pdf" class="texto-error">Tiene que ser un JSON.</span>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" id="boton-enviar">Enviar Datos</button>
+                </form>
