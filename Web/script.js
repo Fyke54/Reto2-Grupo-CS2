@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorEmail.style.display = 'none';
             }
 
-            // Validar Archivo PDF
-            var archivoPdf = document.getElementById('archivo-pdf');
-            var errorPdf = document.getElementById('error-pdf');
-            if (archivoPdf.files.length === 0 || archivoPdf.files[0].type !== 'application/pdf') {
-                errorPdf.style.display = 'block';
+            // Validar Archivo JSON
+            var archivoJson = document.getElementById('archivo-json');
+            var errorJson = document.getElementById('error-json');
+            if (archivoJson.files.length === 0 || archivoJson.files[0].type !== 'application/json') {
+                errorJson.style.display = 'block';
                 todoCorrecto = false;
             } else {
-                errorPdf.style.display = 'none';
+                errorJson.style.display = 'none';
             }
 
             // Si todo está correcto
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     experiencia: rangoExperiencia.value,
                     lenguajes: listaLenguajes,
                     basesDeDatos: listaBbdd,
-                    nombreDelPdf: archivoPdf.files[0].name
+                    nombreDelJson: archivoJson.files[0].name
                 };
                 
                 console.log("Datos en JSON:", datosFormulario);
