@@ -1,0 +1,151 @@
+:root {
+    --color-gris_oscuro: #4B5563;
+    --color-fondo: #9CA3AF;
+    --color-rojo: #dc3545;
+    --color-verde: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Usamos el ID en lugar de una clase para centrar los contenedores */
+#caja-contenedor {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--color-gris_oscuro);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+/* Estilo para la tarjeta blanca usando su ID */
+#tarjeta-formulario {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #fafafa;
+}
+
+legend {
+    background-color: var(--color-gris_oscuro);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Usamos el ID para la distribución en cuadrícula */
+#fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.bloque-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#fila-doble .bloque-campo {
+    margin-bottom: 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Selectores de etiqueta directos para todos los inputs y textareas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea,
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-gris_oscuro);
+}
+
+#grupo-opciones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilo para el botón usando su ID */
+#boton-enviar {
+    background-color: var(--color-gris_oscuro);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#boton-enviar:hover {
+    background-color: #004494;
+}
+
+/* Mensajes de error en rojo */
+.texto-error {
+    color: var(--color-rojo);
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Mensaje de éxito verde */
+#mensaje-exito {
+    background-color: #d4edda;
+    color: var(--color-verde);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+}
