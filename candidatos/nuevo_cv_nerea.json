@@ -1,0 +1,59 @@
+{
+  "nombre": "Nerea",
+  "apellido1": "Sánchez",
+  "apellido2": "Vega",
+  "correo": "nerea.sanchez@example.com",
+  "cv": {
+    "datos_personales": {
+      "nombre": "Nerea",
+      "apellidos": "Sánchez Vega",
+      "email": "nerea.sanchez@example.com",
+      "telefono": "+34 600 222 333",
+      "ciudad": "Pamplona",
+      "pais": "España"
+    },
+    "perfil_profesional": "Desarrolladora junior interesada en aplicaciones web, automatización y trabajo en equipo.",
+    "experiencia_laboral": [
+      {
+        "puesto": "Desarrolladora web junior",
+        "empresa": "Norte Digital",
+        "ubicacion": "Pamplona, España",
+        "fecha_inicio": "2023-02",
+        "fecha_fin": "2025-11",
+        "responsabilidades": [
+          "Desarrollo de páginas con HTML, CSS y JavaScript",
+          "Automatización de tareas con Python",
+          "Colaboración en proyectos con Git"
+        ]
+      }
+    ],
+    "formacion": [
+      {
+        "titulo": "Técnico Superior en Desarrollo de Aplicaciones Web",
+        "institucion": "Centro Integrado de Formación Profesional",
+        "ubicacion": "Pamplona, España",
+        "fecha_inicio": "2021-09",
+        "fecha_fin": "2023-06"
+      }
+    ],
+    "habilidades": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "Git"
+    ],
+    "idiomas": [
+      { "idioma": "Español", "nivel": "Nativo" },
+      { "idioma": "Euskera", "nivel": "Intermedio" },
+      { "idioma": "Inglés", "nivel": "B2" }
+    ],
+    "certificaciones": [],
+    "proyectos": [
+      {
+        "nombre": "Gestor de tareas",
+        "descripcion": "Aplicación web sencilla para organizar tareas personales."
+      }
+    ]
+  }
+}

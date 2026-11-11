@@ -13,7 +13,7 @@ LISTA_path = CARPETA_path / "candidatos.json"
 
 # Define las habilidades e idiomas que se usan para calcular la nota.
 HABILIDADES_NECESARIAS_list = ["html", "python", "java", "javascript"]
-IDIOMAS_NECESARIOS_list = ["espanol", "euskera", "ingles"]
+IDIOMAS_NECESARIOS_list = ["español", "euskera", "inglés"]
 
 
 # Calcula la experiencia laboral total en anos a partir de las fechas.
